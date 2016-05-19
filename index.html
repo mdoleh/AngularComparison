@@ -211,8 +211,21 @@
 								<td style="text-align: center">Angular 2.0</td>
 							</tr>
 							<tr>
-								<td><pre style="width: 100%"><code></td></code></pre></td>
-								<td><pre style="width: 100%"><code></td></code></pre></td>
+								<td><pre style="width: 100%"><code data-trim>
+									
+									&lt;tr ng-repeat="movie in vm.movies"&gt;
+  &lt;td>{{movie.title}}&lt;/td&gt;
+&lt;/tr&gt;
+									
+									</code></pre></td>
+								<td><pre style="width: 100%"><code data-trim>
+									
+									&lt;tr *ngFor="let movie of movies"&gt;
+  &lt;td&gt;{{movie.title}}&lt;/td&gt;
+&lt;/tr&gt;
+
+									
+									</code></pre></td>
 							</tr>
 						</table>
 					</section>
