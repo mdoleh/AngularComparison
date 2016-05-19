@@ -93,10 +93,85 @@
                             <ul>
                                 <li>No longer need to think about the digest cycle</li>
                                 <li>No more <code>$scope.$digest()</code> or <code>$scope.$apply()</code></li>
-                                <li>No more <code>$timeout</code></li>
+                                <li>No more wrapping code in <code>$timeout</code></li>
+								<li class="fragment"><a href="https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html">Lifecycle Hooks</a></li>
+								<ul class="fragment">
+									<li><code>ngAfterContentInit</code></li>
+									<li><code>ngAfterContentChecked</code></li>
+									<li><code>ngAfterViewInit</code></li>
+									<li><code>ngAfterViewChecked</code></li>
+								</ul>
                             </ul>
                         </ul>
                     </section>
+					<section>
+                        <h2>Improved Performance</h2>
+                        <ul>
+                            <li><a href="http://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html">Faster Single Binding Change Detection</a></li>
+                            <ul>
+                                <li>No longer scans a tree of objects</li>
+                                <li>Changes produce a clear path in the tree to the changed component</li>
+                                <ul>
+									<li class="fragment">Possible through the use of Observable and Immutable models</li>
+								</ul>
+                            </ul>
+                        </ul>
+                    </section>
+					<section>
+						<h2>Improved Modularity</h2>
+						<ul>
+							<li>Lazy Loading</li>
+							<ul>
+								<li>Only modules that are needed are loaded asynchronously</li>
+								<li>Can even make use of the ES6 module loader or any other loader of your choice</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Improved Dependency Injection</h2>
+						<ul>
+							<li>Angular 1</li>
+							<ul>
+								<li>Global pool of objects</li>
+								<li>Silently overwrites existing objects if they have the same name</li>
+								<li>Multiple dependency injection mechanisms (linking functions, directives, controllers)</li>
+							</ul>
+							<li class="fragment">Angular 2</li>
+							<ul class="fragment">
+								<li>Injection by Type instead of by name</li>
+								<li>Hierarchical - child component looks up parent's implementation as needed</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Web Component Friendly</h2>
+						<ul>
+							<li>Support is Built-In</li>
+								<pre style="width: 100%"><code data-noescape>@Component({
+  templateUrl: 'zippy.html',
+  styles: [`
+    .zippy {
+      background: green;
+    }
+  `],
+  encapsulation: <mark>ViewEncapsulation.Native</mark>
+})</code></pre>
+						</ul>
+					</section>
+					<section>
+						<h2>Server Side Rendering</h2>
+						<ul>
+							<li>Improved SEO</li>
+							<li>Improved User Experience</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Improved Testability</h2>
+						<ul>
+							<li>Separated the rendering layer</li>
+							<li>Code requires no DOM to be tested</li>
+						</ul>
+					</section>
                 </section>
 			</div>
 		</div>
