@@ -146,7 +146,7 @@
 					<section>
 						<h2>Web Component Friendly</h2>
 						<ul>
-							<li>Support is Built-In</li>
+							<li>Support is <a href="http://blog.thoughtram.io/angular/2015/06/29/shadow-dom-strategies-in-angular2.html">Built-In</a></li>
 								<pre style="width: 100%"><code data-noescape>@Component({
   templateUrl: 'zippy.html',
   styles: [`
@@ -173,6 +173,50 @@
 						</ul>
 					</section>
                 </section>
+				<section>
+					<section>
+						<h2>Code</h2>
+					</section>
+					<section>
+						<h2>Interpolation</h2>
+						<table>
+							<tr>
+								<td style="text-align: center">Angular 1.x</td>
+								<td style="text-align: center">Angular 2.0</td>
+							</tr>
+							<tr>
+								<td><pre style="width: 100%"><code>Your favorite hero is: {{vm.favoriteHero}}</code></pre></td>
+								<td><pre style="width: 100%"><code>Your favorite hero is: {{favoriteHero}}</code></pre></td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h2>Filters vs. Pipes</h2>
+						<table>
+							<tr>
+								<td style="text-align: center">Angular 1.x</td>
+								<td style="text-align: center">Angular 2.0</td>
+							</tr>
+							<tr>
+								<td><pre style="width: 100%"><code>{{movie.title | uppercase}}</td></code></pre></td>
+								<td><pre style="width: 100%"><code>{{movie.title | uppercase}}</td></code></pre></td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h2>Local Variables vs. Input Variables</h2>
+						<table>
+							<tr>
+								<td style="text-align: center">Angular 1.x</td>
+								<td style="text-align: center">Angular 2.0</td>
+							</tr>
+							<tr>
+								<td><pre style="width: 100%"><code></td></code></pre></td>
+								<td><pre style="width: 100%"><code></td></code></pre></td>
+							</tr>
+						</table>
+					</section>
+				</section>
 			</div>
 		</div>
 
