@@ -204,7 +204,7 @@
 						</table>
 					</section>
 					<section>
-						<h2>Local Variables vs. Input Variables</h2>
+						<h2>ng-repeat vs. *ngFor</h2>
 						<table>
 							<tr>
 								<td style="text-align: center">Angular 1.x</td>
@@ -228,6 +228,193 @@
 									</code></pre></td>
 							</tr>
 						</table>
+					</section>
+					<section>
+						<h2>ng-app vs. Bootstrap</h2>
+						<table>
+							<tr>
+								<td style="text-align: center">Angular 1.x</td>
+								<td style="text-align: center">Angular 2.0</td>
+							</tr>
+							<tr>
+								<td><pre style="width: 100%"><code>&lt;body ng-app="movieHunter"&gt;</code></pre></td>
+								<td><pre style="width: 100%"><code>import { bootstrap } from '@angular/platform-browser-dynamic';
+
+import { AppComponent } from './app.component';
+
+bootstrap(AppComponent);</code></pre></td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h2>ng-class vs. [ngClass]</h2>
+						<table>
+							<tr>
+								<td style="text-align: center">Angular 1.x</td>
+								<td style="text-align: center">Angular 2.0</td>
+							</tr>
+							<tr>
+								<td><pre style="width: 100%"><code>&lt;div ng-class="{active: isActive}"&gt;
+&lt;div ng-class="{active: isActive, 
+                   shazam: isImportant}"&gt;</code></pre></td>
+								<td><pre style="width: 100%"><code>&lt;div [ngClass]="{active: isActive}"&gt;
+&lt;div [ngClass]="{active: isActive,
+                 shazam: isImportant}"&gt;
+&lt;div [class.active]="isActive"&gt;</code></pre></td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h2>ng-click vs. (click)</h2>
+						<table>
+							<tr>
+								<td style="text-align: center">Angular 1.x</td>
+								<td style="text-align: center">Angular 2.0</td>
+							</tr>
+							<tr>
+								<td><pre style="width: 100%"><code>&lt;button ng-click="vm.toggleImage()"&gt;
+&lt;button ng-click="vm.toggleImage($event)"&gt;
+</code></pre></td>
+								<td><pre style="width: 100%"><code>&lt;button (click)="toggleImage()"&gt;
+&lt;button (click)="toggleImage($event)"&gt;
+</code></pre></td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h2>Controllers vs. Components</h2>
+						<table>
+							<tr>
+								<td style="text-align: center">Angular 1.x</td>
+								<td style="text-align: center">Angular 2.0</td>
+							</tr>
+							<tr>
+								<td><pre style="width: 100%"><code>myApp.controller('GreetingController', 
+['$scope', function($scope) {
+  $scope.greeting = 'Hola!';
+}]);</code></pre></td>
+								<td><pre style="width: 100%"><code>@Component({
+  selector: 'movie-list',
+  templateUrl:'app/movie-list.component.html',
+  styleUrls: ['app/movie-list.component.css'],
+  pipes: [StringSafeDatePipe]
+})
+</code></pre></td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h2>ng-if vs. *ngIf</h2>
+						<table>
+							<tr>
+								<td style="text-align: center">Angular 1.x</td>
+								<td style="text-align: center">Angular 2.0</td>
+							</tr>
+							<tr>
+								<td><pre style="width: 100%"><code>&lt;table ng-if="movies.length"&gt;
+</code></pre></td>
+								<td><pre style="width: 100%"><code>&lt;table *ngIf="movies.length"&gt;
+</code></pre></td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h2>ng-model vs. ngModel</h2>
+						<table>
+							<tr>
+								<td style="text-align: center">Angular 1.x</td>
+								<td style="text-align: center">Angular 2.0</td>
+							</tr>
+							<tr>
+								<td><pre style="width: 100%"><code>&lt;input ng-model="vm.favoriteHero"/&gt;
+</code></pre></td>
+								<td><pre style="width: 100%"><code>&lt;input [(ngModel)]="favoriteHero" /&gt;
+</code></pre></td>
+							</tr>
+						</table>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Pipes in Angular 2.0</h2>
+						<table>
+							<tr>
+								<td style="text-align: center">Angular 1.x</td>
+								<td style="text-align: center">Angular 2.0</td>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>currency</li>
+										<li>date</li>
+										<li>filter</li>
+										<li>json</li>
+										<li>limitTo</li>
+										<li>lowercase</li>
+										<li>number</li>
+										<li>orderBy</li>
+									</ul>
+								</td>
+								<td>
+									<ul>
+										<li>currency</li>
+										<li>date</li>
+										<li>-</li>
+										<li>json</li>
+										<li>slice</li>
+										<li>lowercase</li>
+										<li>number</li>
+										<li>-</li>
+									</ul>
+								</td>
+							</tr>
+						</table>
+						<ul>
+							<li class="fragment">Missing pipes in Angular 2.0 are due to performance reasons</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Components in Angular 2.0</h2>
+						<ul>
+							<li>No longer has its own module system</li>
+							<li>Instead utilizes ES2015 modules or the module loader of your choice</li>
+							<li>Required code is imported as needed</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Component Class</h2>
+						<ul>
+							<li>Behavior is defined in classes rather than functions</li>
+							<li>Information like dependencies to inject, or templates to load is handled in the <code>@Component</code> decorator</li>
+							<li>Massively simplifies unit testing</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Unit Testing</h2>
+					</section>
+					<section>
+						<table>
+							<tr>
+								<td style="text-align: center">Angular 1.x</td>
+								<td style="text-align: center">Angular 2.0</td>
+							</tr>
+							<tr>
+								<td>
+									
+								</td>
+								<td>
+									<!-- figure out how to get element around Angular 1.x on slide -->
+									<!-- next slide will be Angular 2.0 in the same form but only one thing showing -->
+								</td>
+							</tr>
+						</table>
+						<h2>Angular 1.x</h2>
+						<pre><code>var element = $compile("&lt;a-great-eye&gt;&lt;/a-great-eye&gt;")($rootScope);
+$rootScope.$digest();</code></pre>
 					</section>
 				</section>
 			</div>
