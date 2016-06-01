@@ -397,24 +397,38 @@ bootstrap(AppComponent);</code></pre></td>
 						<h2>Unit Testing</h2>
 					</section>
 					<section>
-						<table>
-							<tr>
-								<td style="text-align: center">Angular 1.x</td>
-								<td style="text-align: center">Angular 2.0</td>
-							</tr>
-							<tr>
-								<td>
-									
-								</td>
-								<td>
-									<!-- figure out how to get element around Angular 1.x on slide -->
-									<!-- next slide will be Angular 2.0 in the same form but only one thing showing -->
-								</td>
-							</tr>
-						</table>
 						<h2>Angular 1.x</h2>
-						<pre><code>var element = $compile("&lt;a-great-eye&gt;&lt;/a-great-eye&gt;")($rootScope);
-$rootScope.$digest();</code></pre>
+						<ul style="width: 100%">
+							<li class="fragment" style="bullet-style: none; width: 100%">
+								<pre><code>beforeEach(module('myApp'))</code></pre></li>
+							<li class="fragment" style="bullet-style: none; width: 100%">
+								<pre><code>inject(function(_$controller_, ...)...</code></pre></li>
+							<li class="fragment" style="bullet-style: none; width: 100%">
+								<pre><code>$controller('PasswordController', { $scope: $scope })</code></pre></li>
+							<li class="fragment" style="bullet-style: none; width: 100%">
+								<pre><code>$filter('length')</code></pre></li>
+							<li class="fragment" style="bullet-style: none; width: 100%">
+								<pre><code>$provide.value('myService', myMockedService)</code></pre></li>
+							<li class="fragment" style="bullet-style: none; width: 100%">
+								<pre><code>var scope = $rootScope.$new();
+var element = $compile("&lt;div my-directive&gt;&lt;/div&gt;")(scope);
+scope.$digest();</code></pre></li>
+						</ul>
+					</section>
+					<section>
+						<img src="images/bane_test.jpg" width="100%" height="100%" alt="">
+					</section>
+					<section>
+						<h2>Angular 2.0</h2>
+						<ul style="width: 100%">
+							<li class="fragment" style="bullet-style:none; width: 100%;">
+										<pre><code>import {BacService} from '../src/BacService';
+											
+beforeEach(() => {
+	mockSerializer = jasmine.createSpyObj("SerializerService", ["getData", "storeData"]);
+    bacService = new BacService(mockSerializer);
+  });</code></pre></li>
+						</ul>
 					</section>
 				</section>
 			</div>
