@@ -297,7 +297,9 @@ bootstrap(AppComponent);</code></pre></td>
   selector: 'movie-list',
   templateUrl:'app/movie-list.component.html',
   styleUrls: ['app/movie-list.component.css'],
-  pipes: [StringSafeDatePipe]
+  pipes: [StringSafeDatePipe],
+  providers: [SerializerService],
+  directives: [FORM_DIRECTIVES]
 })
 export class MovieListComponent {
   this.greeting = 'Hola!';
